@@ -1,0 +1,260 @@
+@import url(https://fonts.googleapis.com/css2?family=Jura:wght@400;600&display=swap);
+.terminals-list {
+  background: white;
+  margin: 40px;
+  padding: 20px;
+}
+.terminals-list .item {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #f2f2f2;
+  margin: 10px 0;
+  padding: 10px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+.terminals-list .item h3 {
+  font-weight: bold;
+}
+.terminals-list .item a {
+  margin-left: 10px;
+  font-size: 12px;
+}
+.terminals-list .item a:hover {
+  text-decoration: line-through;
+}
+.terminals-list .item a.delete {
+  color: red;
+}
+
+.terminal {
+  font-family: "Jura", sans-serif;
+  color: white;
+  width: 100%;
+  max-width: 1260px;
+  margin: 40px auto;
+  background: #061118;
+  border: 1px solid #FFFFFF;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+.terminal .header {
+  position: relative;
+  background: #242F36;
+  text-align: center;
+  font-size: 18px;
+  line-height: 2;
+  -webkit-border-top-left-radius: 10px;
+     -moz-border-radius-topleft: 10px;
+          border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+     -moz-border-radius-topright: 10px;
+          border-top-right-radius: 10px;
+  font-weight: 600;
+}
+.terminal .header:after {
+  content: url("/image/dot-terminal.svg");
+  position: absolute;
+  left: 20px;
+}
+.terminal .body {
+  padding: 20px;
+  font-size: 32px;
+  line-height: 1.5;
+}
+.terminal .body .command {
+  font-weight: 600;
+  padding: 10px 0;
+}
+.terminal .body .command:after {
+  content: "";
+  width: 13px;
+  height: 35px;
+  background: #929292;
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+     -moz-animation: blink-animation 1s steps(5, start) infinite;
+       -o-animation: blink-animation 1s steps(5, start) infinite;
+          animation: blink-animation 1s steps(5, start) infinite;
+}
+.terminal .body .answer {
+  opacity: 0;
+  font-weight: 400;
+}
+.terminal .body .answer span {
+  color: #009fe3;
+}
+.terminal .body .answer.ready {
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+@-moz-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-o-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+form.terminal {
+  background: white;
+  margin: 40px auto;
+  padding: 20px;
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+}
+form.terminal .form-group {
+  width: 100%;
+  margin: 10px;
+}
+form.terminal .form-group label {
+  font-weight: bold;
+  color: #b0b0b0;
+  font-size: 12px;
+}
+form.terminal .form-group input, form.terminal .form-group textarea {
+  width: 100%;
+  border: 1px solid #eee;
+  font-size: 16px;
+  color: black;
+}
+form.terminal .form-group textarea {
+  min-height: 150px;
+  max-height: 300px;
+}
+
+.btn {
+  background: #0daeff;
+  color: white;
+  padding: 10px 30px;
+}
+.btn:hover {
+  text-decoration: line-through;
+}
+
+.alert {
+  margin: 20px auto;
+  padding: 20px;
+  background: #56b44d;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+.alert.alert-danger {
+  background: #a31d1d;
+}
+
+@media screen and (max-width: 1100px) {
+  .terminal .header {
+    font-size: 18px;
+  }
+  .terminal .body {
+    font-size: 25px;
+  }
+  .terminal .body .command:after {
+    height: 24px;
+    width: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .terminal .header {
+    font-size: 16px;
+  }
+  .terminal .header:after {
+    -webkit-transform: scale(0.6);
+       -moz-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+         -o-transform: scale(0.6);
+            transform: scale(0.6);
+    left: 0;
+  }
+  .terminal .body {
+    font-size: 18px;
+  }
+  .terminal .body .command:after {
+    height: 16px;
+    width: 6px;
+    margin-top: 8px;
+  }
+
+  .terminals-list {
+    margin: 10px 0;
+  }
+  .terminals-list .item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .terminals-list .item h3 {
+    text-align: center;
+    font-size: 14px;
+  }
+  .terminals-list .item .links {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid black;
+  }
+  .terminals-list .item .links a {
+    margin: auto;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 395px) {
+  .terminal .header {
+    font-size: 12px;
+  }
+  .terminal .body {
+    font-size: 16px;
+  }
+}

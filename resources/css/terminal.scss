@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;600&display=swap');
+.terminals-list{
+    background: white;
+    margin: 40px;
+    padding: 20px;
+    .item{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background: #f2f2f2;
+        margin: 10px 0;
+        padding: 10px;
+        transition: .3s;
+        h3{
+            font-weight: bold;
+        }
+        a{
+            margin-left: 10px;
+            font-size: 12px;
+            &:hover{
+                text-decoration: line-through;
+            }
+            &.delete{
+                color: red;
+            }
+        }
+    }
+}
+.terminal{
+    font-family: 'Jura', sans-serif;
+    color:white;
+    width: 100%;
+    max-width: 1260px;
+    margin: 40px auto;
+    background: #061118;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 10px;
+    .header{
+        position: relative;
+        background: #242F36;
+        text-align: center;
+        font-size: 18px;
+        line-height: 2;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-weight: 600;
+        &:after{
+            content: url("/image/dot-terminal.svg");
+            position: absolute;
+            left: 20px;
+        }
+    }
+    .body{
+        padding: 20px;
+        font-size: 32px;
+        line-height: 1.5;
+        .command{
+            font-weight: 600;
+            padding: 10px 0;
+            &:after{
+                content: "";
+                width: 13px;
+                height: 35px;
+                background: #929292;
+                position: absolute;
+                margin-left: 10px;
+                margin-top: 10px;
+                display: inline-block;
+                animation: blink-animation 1s steps(5, start) infinite;
+            }
+        }
+        .answer{
+            opacity: 0;
+            font-weight: 400;
+            span{
+                color: #009fe3;
+            }
+            &.ready {
+                opacity: 1;
+                transition: opacity 1s;
+            }
+        }
+    }
+}
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+form.terminal{
+    background: white;
+    margin: 40px auto;
+    padding: 20px;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+    .form-group{
+        label{
+            font-weight: bold;
+            color: #b0b0b0;
+            font-size: 12px;
+        }
+        width: 100%;
+        margin: 10px;
+        input, textarea{
+            width: 100%;
+            border: 1px solid #eee;
+            font-size: 16px;
+            color:black;
+        }
+        textarea {
+            min-height: 150px;
+            max-height: 300px;
+        }
+    }
+}
+.btn{
+    background: #0daeff;
+    color: white;
+    padding: 10px 30px;
+    &:hover{
+       text-decoration: line-through;
+    }
+}
+.alert{
+    margin: 20px auto;
+    padding: 20px;
+    background: #56b44d;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    &.alert-danger{
+        background: #a31d1d;
+    }
+}
+@media screen and (max-width: 1100px){
+    .terminal {
+        .header{
+            font-size: 18px;
+        }
+        .body {
+            font-size: 25px;
+            .command:after{
+                height: 24px;
+                width: 10px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .terminal {
+        .header{
+            font-size: 16px;
+            &:after{
+                transform: scale(0.6);
+                left: 0;
+            }
+        }
+        .body {
+            font-size: 18px;
+            .command:after{
+                height: 16px;
+                width: 6px;
+                margin-top: 8px;
+            }
+        }
+    }
+    .terminals-list {
+        margin: 10px 0;
+        .item {
+            flex-direction: column;
+            h3 {
+                text-align: center;
+                font-size: 14px;
+            }
+            .links {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+                padding-top: 10px;
+                border-top: 1px solid black;
+                a {
+                    margin: auto;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 395px){
+    .terminal {
+        .header{
+            font-size: 12px;
+        }
+        .body {
+            font-size: 16px;
+        }
+    }
+}

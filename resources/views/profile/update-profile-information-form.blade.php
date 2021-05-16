@@ -59,12 +59,21 @@
             <x-jet-input-error for="name" class="mt-2" />
         </div>
 
+
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="email" value="{{ __('Email') }}" />
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
+        @if (Auth::user()->admin);
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="name" value="{{ __('Admin') }}" class="inline-block"/>
+            <x-jet-input id="admin" type="checkbox" class=" inline-block" wire:model.defer="state.admin" autocomplete="name" />
+            <x-jet-input-error for="admin" class="mt-2" />
+        </div>
+        @endif
+
     </x-slot>
 
     <x-slot name="actions">

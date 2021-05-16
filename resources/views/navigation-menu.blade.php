@@ -78,6 +78,7 @@
                                     <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
+
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
                                         {{ Auth::user()->name }}
@@ -95,7 +96,14 @@
                             <div class="block px-4 py-2 text-xs text-gray-400">
                                 {{ __('Manage Account') }}
                             </div>
-
+                            <x-jet-dropdown-link href="{{ route('terminal') }}">
+                                {{ __('Terminals') }}
+                            </x-jet-dropdown-link>
+                            @if(\Auth::User()->admin)
+                            <x-jet-dropdown-link href="{{ route('terminal-admin') }}">
+                                {{ __('Terminals-admin') }}
+                            </x-jet-dropdown-link>
+                            @endif
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
                             </x-jet-dropdown-link>
